@@ -19,8 +19,7 @@ const font2 = Poppins({
 export const metadata: Metadata = {
   title: "jase",
   description:
-    "Personal portfolio of Jane Doe, a passionate designer and developer creating beautiful digital experiences.",
-    generator: 'v0.dev'
+    "Personal portfolio of John Razec Agno, a passionate designer and developer creating beautiful digital experiences.",
 }
 
 export default function RootLayout({

@@ -60,10 +60,8 @@ export default function Expertise() {
 
   return (
 
-    <section id="expertise" className="py-20 px-6 backdrop-blur-md bg-gradient-to-b to-[rgba(0,0,0,0.32)] from-[rgba(32,32,32,0.32)] " ref={ref}>
-
-
-
+    <section id="expertise" className="py-20 px-6 backdrop-blur-md bg-black z-50" ref={ref}>
+      
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -86,14 +84,14 @@ export default function Expertise() {
           className="mb-16"
         >
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-[80%] mx-auto">
             {expertise.map((exp, index) => (
               <motion.div
                 key={exp.name}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="relative cursor-default border-cyan-200/20 border-2 bg-gradient-to-br from-cyan-50/5 via-cyan-700/20 to-cyan-900/40 p-6 rounded-2xl  shadow-xl backdrop-blur-lg hover:border-cyan-400/60 transition-all duration-300 group overflow-hidden"
+                className="relative cursor-default border-white/20 border-2  bg-gradient-to-br from-white/5 via-white/10 to-white/5 p-6 rounded-2xl backdrop-blur-lg hover:border-cyan-400/60 transition-all duration-300 group md:h-52 z-20"
                 style={{
                   boxShadow: "0 0 0 1px #06B6D426",
                 }}
@@ -116,18 +114,18 @@ export default function Expertise() {
                   />
                 </div>
 
-                <div className="h-[20%] flex items-center gap-3 mb-4">
+                <div className="h-[10%] flex items-center gap-3 mb-4">
                   <div className="flex justify-center items-center">
-                    <exp.icon className="w-12 h-12 text-cyan-600 group-hover:text-cyan-300 transition-colors drop-shadow-lg" />
+                    <exp.icon className="w-8 h-8 text-cyan-600 group-hover:text-cyan-300 transition-colors drop-shadow-lg" />
                   </div>
-                  <h3 className="text-cyan-500 font-extrabold group-hover:text-cyan-200 text-2xl transition-colors md:text-3xl tracking-tight drop-shadow-lg">
+                  <h3 className="text-cyan-500 font-semibold group-hover:text-cyan-200 text-xl transition-colors md:text-xl tracking-tight drop-shadow-lg">
                     {exp.name}
                   </h3>
                 </div>
-                <div className="h-[15%] flex items-center text-white text-base font-semibold mb-2 italic leading-snug">
+                <div className="h-[20%] flex items-center md:text-sm text-white text-base font-semibold mb-2 italic leading-snug">
                   {exp.shortDesc}
                 </div>
-                <div className="text-gray-200 text-md md:text-lg text-justify leading-relaxed font-light">
+                <div className="text-gray-200 text-md md:text-sm text-justify leading-relaxed font-light">
                   {exp.desc}
                 </div>
               </motion.div>
@@ -140,20 +138,33 @@ export default function Expertise() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="w-[80%] flex-col justify-center m-auto bg-white/5 border-2 border-white/5 p-10 rounded-3xl"
         >
           <h3 className="text-2xl font-semibold mb-8 text-white text-center">Tools & Applications</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
             {applications.map((app, index) => (
               <motion.div
-                key={app.name}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 group"
+              key={app.name}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              className=" border-white/20 border-2 bg-cyan-400/5 p-4 rounded-2xl backdrop-blur-lg hover:border-cyan-400/60 transition-all duration-300 group z-10"
+              style={{
+                boxShadow: "0 0 0 1px #06B6D426",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLDivElement).style.boxShadow =
+                "-0.1rem 0.1rem 1rem 0 #06B6D4B3, 0 0 0 1px #06B6D440"
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLDivElement).style.boxShadow =
+                "0 0 0 1px #06B6D440"
+              }}
               >
-                <app.icon className="w-8 h-8 text-cyan-400 mb-4 group-hover:text-cyan-300 transition-colors" />
-                <h4 className="text-white font-semibold mb-2">{app.name}</h4>
-                <p className="text-gray-400 text-sm">{app.shortDesc}</p>
+              <div className="flex flex-col items-center justify-center h-full">
+                <app.icon className="w-8 h-8 text-cyan-600 mb-3 group-hover:text-cyan-300 transition-colors" />
+                <h4 className="text-white font-semibold text-sm text-center">{app.name}</h4>
+              </div>
               </motion.div>
             ))}
           </div>

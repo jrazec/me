@@ -58,7 +58,7 @@ export default function Portfolio() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="portfolio" className="py-20 px-6 bg-gradient-to-b from-neutral-950 to-gray-950" ref={ref}>
+    <section id="portfolio" className="py-20 px-6 bg-black" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

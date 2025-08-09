@@ -20,10 +20,10 @@ export default function Footer() {
           <div className="flex items-center justify-center space-x-2 mb-6">
             <span className="text-gray-400">Crafted with</span>
             <Heart size={16} className="text-red-400 fill-current" />
-            <span className="text-gray-400">by Jane Doe</span>
+            <span className="text-gray-400">by John Razec Agno</span>
           </div>
 
-          <p className="text-gray-500 mb-6">© {new Date().getFullYear()} Jane Doe. All rights reserved.</p>
+          <p className="text-gray-500 mb-6">© {new Date().getFullYear()} John Razec Agno. All rights reserved.</p>
 
           <div className="mb-8">
             <p className="text-sm text-gray-600 mb-4">Built with Next.js, TypeScript, TailwindCSS & Framer Motion</p>

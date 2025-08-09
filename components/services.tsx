@@ -3,65 +3,63 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Code, Palette, Smartphone, Globe, Zap, Shield } from "lucide-react"
+import { Code, Palette, Smartphone, Globe, Zap, Shield, Globe2, GlobeIcon } from "lucide-react"
 
 const services = [
   {
-    icon: Globe,
-    title: "Web Development",
-    description: "Custom websites and web applications built with modern technologies",
-    features: ["Responsive Design", "SEO Optimization", "Performance Optimization", "Cross-browser Compatibility"],
-    pricing: "Starting at $2,500",
+    icon: Globe2,
+    title: "Business Website",
+    description: "Boost your business with a conversion-driven website that’s easy to update and manage.",
+    features: [
+      "Responsive Custom Design",
+      "Up to 8 Pages",
+      "Integrated CMS",
+      "Custom Domain Setup",
+      "1 Month Free Support"
+    ],
+    pricing: "Starting at $249",
     popular: false,
   },
+
   {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications for iOS and Android",
-    features: ["React Native", "Native Performance", "App Store Deployment", "Push Notifications"],
-    pricing: "Starting at $5,000",
+    icon: Globe,
+    title: "Professional Portfolio Website",
+    description: "Showcase your work with a sleek, responsive portfolio designed to impress and engage.",
+    features: [
+      "Responsive Custom Design",
+      "Up to 3 Pages",
+      "Fast & Accessible",
+      "Domain & Hosting Guidance",
+      "Deployment Support"
+    ],
+    pricing: "Starting at $79",
     popular: true,
   },
+
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "User-centered design solutions that enhance user experience",
-    features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-    pricing: "Starting at $1,500",
+    icon: GlobeIcon,
+    title: "Elite Custom Web Solutions",
+    description: "Get a fully tailored, premium website or app built to elevate your brand and user experience.",
+    features: [
+      "Bespoke Design & Development",
+      "Desired Pages & Features",
+      "E-Commerce or Custom Apps",
+      "Advanced SEO & Performance",
+      "Ongoing Support & Management"
+    ],
+    pricing: "Starting at $499",
     popular: false,
   },
-  {
-    icon: Code,
-    title: "Full-Stack Development",
-    description: "End-to-end development solutions from database to user interface",
-    features: ["Database Design", "API Development", "Frontend Integration", "Deployment"],
-    pricing: "Starting at $4,000",
-    popular: false,
-  },
-  {
-    icon: Zap,
-    title: "Performance Optimization",
-    description: "Speed up your existing applications and improve user experience",
-    features: ["Code Optimization", "Database Tuning", "CDN Setup", "Monitoring"],
-    pricing: "Starting at $1,000",
-    popular: false,
-  },
-  {
-    icon: Shield,
-    title: "Maintenance & Support",
-    description: "Ongoing support and maintenance for your digital products",
-    features: ["Bug Fixes", "Security Updates", "Feature Updates", "24/7 Support"],
-    pricing: "$500/month",
-    popular: false,
-  },
-]
+];
+
+
 
 export default function Services() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="services" className="py-20 px-6 bg-gradient-to-b from-gray-950 to-black" ref={ref}>
+    <section id="services" className="py-20 px-6 bg-black" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -83,11 +81,10 @@ export default function Services() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border transition-all duration-300 hover:scale-105 ${
-                service.popular
-                  ? "border-cyan-500 shadow-lg shadow-cyan-500/20"
-                  : "border-gray-700 hover:border-cyan-500/50"
-              }`}
+              className={`relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border transition-all duration-300 hover:scale-105 ${service.popular
+                ? "border-cyan-500 shadow-lg shadow-cyan-500/20"
+                : "border-gray-700 hover:border-cyan-500/50"
+                }`}
             >
               {service.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
