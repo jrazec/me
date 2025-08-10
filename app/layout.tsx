@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Montserrat, Poppins } from "next/font/google"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
 
 const font1 = Montserrat({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${font1.variable} ${font2.variable}`}>
+      <Analytics />
       <body className={font1.className}>{children}</body>
     </html>
   )
