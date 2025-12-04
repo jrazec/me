@@ -1,4 +1,8 @@
-import type { Metadata } from "next"
+"use client"
+
+import Link from "next/link"
+import { ArrowLeft, Moon, Sun } from "lucide-react"
+import { useTheme } from "../theme-provider"
 
 const principles = [
   {
@@ -43,19 +47,8 @@ const principles = [
   },
 ]
 
-export const metadata: Metadata = {
-  title: "System • Razec Backend Portfolio",
-  description: "Backend engineering principles and architecture focus areas for John Razec Agno.",
-}
-
-"use client"
-
-import Link from "next/link"
-import { ArrowLeft, Moon, Sun } from "lucide-react"
-import { useState } from "react"
-
 export default function SystemPage() {
-  const [isDark, setIsDark] = useState(true)
+  const { isDark, toggleTheme } = useTheme()
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${
@@ -65,7 +58,7 @@ export default function SystemPage() {
     }`}>
       {/* Theme Toggle */}
       <button
-        onClick={() => setIsDark(!isDark)}
+        onClick={toggleTheme}
         className={`fixed top-6 right-6 z-40 p-3 rounded-full transition-all duration-300 hover:scale-110 ${
           isDark 
             ? 'bg-white/10 border border-white/20 text-white hover:bg-white/20' 
