@@ -28,51 +28,62 @@ const metrics = [
 
 const techStack = [
   {
-    title: "Backend",
-    items: ["Node.js", "Django", "Laravel"],
+    title: "Programming",
+    items: ["JavaScript/TypeScript", "Python", "Java", "PHP", "Dart"],
+  },
+  {
+    title: "Frameworks & Tools",
+    items: ["Node.js", "Django", "React", "Laravel", "Supabase", "PostGIS", "Flutter", "SpringBoot"],
   },
   {
     title: "Databases",
-    items: ["PostgreSQL", "Supabase", "MySQL", "SQLite", "MongoDB"],
+    items: ["MySQL", "PostgreSQL", "SQLite", "MongoDB"],
   },
   {
     title: "ML / Vision",
     items: ["YOLOv11", "OpenCV", "Gemini API"],
   },
   {
-    title: "Tools",
+    title: "Core Competencies",
+    items: ["Analytical Problem-Solving", "Cross-Functional Leadership", "Collaboration"],
+  },
+  {
+    title: "DevOps",
     items: ["Vercel", "Railway", "GitHub Actions"],
   },
 ]
 
 const logs = [
+
   {
-    title: "Lead Project Manager (Intern)",
-    org: "Tech Executive Labs",
-    period: "2024 - Present",
+    title: "Associate Software Engineer",
+    org: "Wavebiz (Project-Based)",
+    period: "May 2025 - June 2025",
+    description: "Developed backend systems using Laravel, focusing on database optimization and implementing collaborative development workflows.",
+    achievements: ["Optimized DB schema with self-referencing categories table, simplifying queries", "Implemented RBAC and product/category CRUD features", "Introduced GitHub workflow improving team coordination and delivery tracking"]
+  },
+
+  {
+    title: "Lead Project Manager",
+    org: "Tech Executive Labs (Intern)",
+    period: "Feb 2025 - May 2025",
     description: "Led cross-functional teams in developing scalable web applications. Coordinated project timelines, managed client communications, and implemented agile methodologies to deliver high-quality software solutions.",
-    achievements: ["Delivered 5+ projects on time", "Improved team efficiency by 30%", "Managed $50K+ project budgets"]
+    achievements: ["Led 40 member team across 4 departments", "Directed biweekly meetings, ensuring project milestones were met"]
   },
-  {
-    title: "Associate Software Engineer Intern (Project-Based)",
-    org: "Wavebiz",
-    period: "2023 - 2024",
-    description: "Developed and maintained backend systems using Node.js and Django. Collaborated with senior engineers to optimize database queries and implement RESTful APIs.",
-    achievements: ["Reduced API response time by 40%", "Built 10+ REST endpoints", "Mentored 2 junior developers"]
-  },
+  
   {
     title: "President",
-    org: "Tech Innovators Society",
-    period: "2022 - 2023",
-    description: "Led a student organization of 100+ members focused on technology innovation and education. Organized workshops, hackathons, and networking events.",
-    achievements: ["Organized 15+ tech events", "Grew membership by 150%", "Established industry partnerships"]
+    org: "Tech Innovators Society (School Organization)",
+    period: "Aug 2024 - June 2025",
+    description: "Led 19 officers and 400+ members, delivering hackathons, IT seminars, and community tech initiatives while expanding the organization's digital presence.",
+    achievements: ["Launched organization website and grew social media to 700+ followers", "Organized programming literacy outreach for high school students", "Delivered hands-on workshops and hackathons for community engagement"]
   },
   {
     title: "Community Partnership Coordinator",
-    org: "Tech Innovators Society",
-    period: "2022 - 2023",
-    description: "Led a student organization of 100+ members focused on technology innovation and education. Organized workshops, hackathons, and networking events.",
-    achievements: ["Organized 15+ tech events", "Grew membership by 150%", "Established industry partnerships"]
+    org: "Tech Innovators Society (School Organization)",
+    period: "Aug 2023 - June 2024",
+    description: "Managed community connections and collaborations, building strategic partnerships to support organizational initiatives and expand outreach.",
+    achievements: ["Established partnerships with local businesses and schools", "Coordinated community events increasing member engagement"]
   },
 ]
 
@@ -91,8 +102,8 @@ const contacts = [
   },
   {
     label: "Resume",
-    value: "Download Resume",
-    href: "/resume.pdf",
+    value: "Ask for a Resume",
+    href: "https://www.linkedin.com/in/jrazec",
     external: false,
   },
 ]
@@ -386,7 +397,7 @@ export default function HomePage() {
         {/* ---------------- System Overview Section ---------------- */}
         <section
           data-section="about"
-          className={`my-0 lg:my-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700 ${visibleSections.has('about')
+          className={`my-0 lg:my-12 max-w-6xl mx-auto px-4 sm:px-6  lg:px-8 transition-all duration-700 ${visibleSections.has('about')
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
             }`}
@@ -466,14 +477,14 @@ export default function HomePage() {
                 <div className="relative z-10">
                   <div>
                     <p className={`text-xs uppercase tracking-[0.25em] ${isDark ? 'text-blue-300/70' : 'text-blue-600'
-                      }`}>System Overview</p>
-                    <h3 className={`mt-2 text-2xl sm:text-3xl font-semibold ${isDark ? 'text-white' : 'text-slate-900'
-                      }`}>About me!</h3>
+                      }`}>User Overview</p>
+                    <h3 className={`my-3 text-2xl sm:text-3xl font-semibold ${isDark ? 'text-white' : 'text-slate-900'
+                      }`}>Hi, I'm Razec </h3>
                   </div>
 
                   <p className={`text-base sm:text-md leading-relaxed ${isDark ? 'text-white/70' : 'text-slate-700'
                     }`}>
-                    I really love learning new things! Boosted by curiosity and definitely fueled by coffee, I'm always eager to explore new stuff. Whether building things from scratch
+                    Currently a senior in college! Fueled by curiosity and caffeine, hyperfocus is kinda my thing. I enjoy learning new things, collaborating with other peeps and socializing.
                   </p>
                 </div>
               </div>
@@ -492,7 +503,7 @@ export default function HomePage() {
           >
             {/* Blue overlay */}
             <div
-              className={`absolute inset-0 ${isDark ? 'bg-blue-400/5' : 'bg-blue-600/5'}`}
+              className={`absolute inset-0 ${isDark ? 'bg-blue-400/0' : 'bg-blue-600/5'}`}
               aria-hidden="true"
             />
 
@@ -528,18 +539,19 @@ export default function HomePage() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10">
+            <div className="relative z-10 ">
               <p className={`text-xs uppercase tracking-[0.3em] ${isDark ? 'text-blue-300/70' : 'text-blue-600'}`}>
                 Off-duty log
               </p>
               <h3 className={`mt-2 text-xl sm:text-2xl font-semibold ${isDark ? 'text-white' : 'text-slate-900'}`}>
                 Beyond the keyboard
               </h3>
-              <p className={`mt-3 text-sm sm:text-base leading-relaxed ${isDark ? 'text-white/70' : 'text-slate-700'}`}>
-                When I’m not coding, I love watching tech stuff. I’ve recently enjoyed creating 2D pixel art,
-                and right now I’m playing the ukulele and learning more. I literally love discovering something new. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestias quod! Doloribus, hic adipisci. Temporibus, distinctio autem. Vel consectetur quis minus harum aliquam nostrum quos tenetur aspernatur, repudiandae doloremque. Eius! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto debitis asperiores deleniti, magni placeat facilis cupiditate minus ea recusandae voluptatem odio maiores laborum tempora illum! Eligendi earum mollitia adipisci excepturi.
-                and right now I’m playing the ukulele and learning more. I literally love discovering something new. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, molestias quod! Doloribus, hic adipisci. Temporibus, distinctio autem. Vel consectetur quis minus harum aliquam nostrum quos tenetur aspernatur, repudiandae doloremque. Eius! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto debitis asperiores deleniti, magni placeat facilis cupiditate minus ea recusandae voluptatem odio maiores laborum tempora illum! Eligendi earum mollitia adipisci excepturi.
-              </p>
+                <p className={`mt-5 text-md sm:text-base text-justify leading-relaxed ${isDark ? 'text-white/70' : 'text-slate-700'}`}>
+                When I'm not coding, I enjoy keeping up with the latest tech updates, browsing Reddit, and watching anime and movies. Recently, I've been having fun creating 2D pixel art and building games around it, and I'm currently planning to release a version of BSUNIVERSE alongside my co-developer <a target="_blank" href="http://github.com/auclinn" className="font-bold">@auclinn</a>—so definitely watch out for that. Right now, I'm also learning how to play the ukulele, which I find to be a great way to relax and unwind after a long day of coding. It helps me feel refreshed and reset. I love creating music as well, from making beats from scratch to writing lyrics, just as much as I enjoy listening to it. Outside of that, I actively join face-to-face events, enjoy meeting and socializing with new people, and love collecting stickers to decorate my laptop.
+                </p>
+                <p className={`mt-5 font-semibold  text-sm sm:text-base text-justify leading-relaxed ${isDark ? 'text-white/70' : 'text-slate-700'}`}>
+                I am also open for collaborations on fun side projects, so feel free to reach out if you have any interesting ideas or just want to chat about tech, games, or music!
+                </p>
             </div>
           </div>
 
@@ -558,7 +570,7 @@ export default function HomePage() {
         {/* ---------------- Activity Timeline Section ---------------- */}
         <section
           data-section="timeline"
-          className={`my-8 sm:my-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 rounded-3xl border p-6 sm:p-8 transition-all duration-700 ${visibleSections.has('timeline')
+          className={`my-8 sm:my-28 max-w-5xl sm:border-none sm:rounded-none mx-auto px-4 sm:px-6 border p-6 sm:p-8 transition-all duration-700 lg:px-8 lg:rounded-3xl ${visibleSections.has('timeline')
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
             } ${isDark
@@ -774,7 +786,7 @@ export default function HomePage() {
         <section
           data-section="contact"
           id="contact"
-          className={`my-8 sm:my-28 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 rounded-3xl border p-6 sm:p-8 transition-all duration-700 ${visibleSections.has('contact')
+          className={`my-8 sm:my-28 max-w-5xl border sm:border-none sm:rounded-none mx-auto px-4 sm:px-10 lg:px-8 lg:rounded-3xl lg:border p-6 sm:p-8 transition-all duration-700 ${visibleSections.has('contact')
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
             } ${isDark
@@ -818,7 +830,7 @@ export default function HomePage() {
             </a>
 
             <a
-              href="/resume.pdf"
+              href="https://www.linkedin.com/in/jrazec"
               target="_blank"
               className={`group rounded-2xl border p-6 transition-all duration-300 hover:scale-105 ${isDark
                 ? 'border-white/10 bg-black/30 hover:border-blue-400/60 hover:shadow-lg hover:shadow-blue-400/20'
@@ -828,20 +840,20 @@ export default function HomePage() {
               <div className="flex items-center gap-3 mb-3">
                 <div className={`p-2 rounded-lg ${isDark ? 'bg-blue-400/20' : 'bg-blue-100'
                   }`}>
-                  <svg className={`w-5 h-5 ${isDark ? 'text-blue-400' : 'text-blue-600'
-                    }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+                    <svg className={`w-5 h-5 ${isDark ? 'text-blue-400' : 'text-blue-600'
+                    }`} fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
                 </div>
                 <div>
                   <p className={`text-xs uppercase tracking-[0.3em] ${isDark ? 'text-blue-300/70' : 'text-blue-600'
-                    }`}>Download</p>
+                    }`}>REACH ME OUT</p>
                   <p className={`text-sm font-semibold group-hover:text-blue-400 transition-colors ${isDark ? 'text-white' : 'text-slate-900'
-                    }`}>Resume PDF</p>
+                    }`}>Ask for Resume </p>
                 </div>
               </div>
               <p className={`text-xs ${isDark ? 'text-white/60' : 'text-slate-600'
-                }`}>View my complete experience</p>
+                }`}>Interested in a copy of my resume? Feel free to reach me out on Linkedin!</p>
             </a>
           </div>
         </section>
