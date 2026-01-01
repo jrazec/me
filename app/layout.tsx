@@ -5,6 +5,7 @@ import { Montserrat, Poppins } from "next/font/google"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "./theme-provider"
+import image from "@/public/razec-3.png"
 
 const font1 = Montserrat({
   subsets: ["latin"],
@@ -20,7 +21,10 @@ const font2 = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Razec • Backend Systems",
+  title: "John Razec - Backend Developer",
+  openGraph: {
+    images: [{ url: image.src }],
+  },
   description:
     "Backend-themed portfolio for John Razec Agno focusing on APIs, observability, and reliable system design.",
 }
