@@ -22,8 +22,9 @@ const font2 = Poppins({
 
 export const metadata: Metadata = {
   title: "John Razec - Backend Developer",
-  openGraph: {
-    images: [{ url: image.src }],
+  icons: {
+    icon: "/razec-3.png",
+    apple: "/razec-3.png",
   },
   description:
     "Backend-themed portfolio for John Razec Agno focusing on APIs, observability, and reliable system design.",
